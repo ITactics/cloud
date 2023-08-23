@@ -1,0 +1,36 @@
+---
+- name: Настройка SSH и создание пользователя
+  hosts: server.cloud
+  become: true
+  tasks:
+    - name: Include encrypted variables
+      include_vars: secrets.vault
+ 
+    - name: Создание нового пользователя
+      user:
+        name: cloudru
+        password: "{{ cloudru_password }}"
+        createhome: yes
+ 
+    - name: Include the encrypted SSH public key
+      include_vars: ssh_keys.vault
+ 
+    - name: Разрешить аутентификацию на основе ключей SSH для нового пользователя
+      authorized_key:
+        user: cloudru
+        key: "{{ cloudru_ssh_public_key }}"
+        state: present
+ 
+    - name: Отключить root-вход по SSH
+      become: yes
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        line: "PermitRootLogin no"
+        state: present
+      notify: Restart SSH
+ 
+  handlers:
+    - name: Restart SSH
+      systemd:
+        name: ssh
+        state: restarted

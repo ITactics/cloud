@@ -1,0 +1,1 @@
+ansible-playbook playbook/configure_ssh_and_user.yaml --ask-vault-pass --become -K

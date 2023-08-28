@@ -1,12 +1,13 @@
 import os
 import uuid
+import socket
 from flask import Flask
 
 app = Flask(__name__)
 
 @app.route('/hostname')
 def get_hostname():
-    return os.uname().nodename
+    return socket.gethostname()
 
 
 @app.route('/author')

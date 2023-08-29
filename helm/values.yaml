@@ -1,0 +1,7 @@
+image:
+  repository: simple-web-app
+  tag: latest
+
+replicaCount: 3
+
+author: Max Kauger

@@ -125,5 +125,3 @@ docker run -d -p 8000:8000 --name my-web-app simple-web-app
 
    ``` sh
    kubectl apply -f /manifests
-```
-

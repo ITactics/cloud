@@ -47,6 +47,7 @@ handler перезапускает службу `SSH` (sshd), чтобы вне�
 
 ``` bash
 ansible-playbook playbook/configure_ssh_and_user.yaml --ask-vault-pass --become -K
+```
 
 # Python Web-приложение с использованием Docker
 
@@ -58,18 +59,21 @@ ansible-playbook playbook/configure_ssh_and_user.yaml --ask-vault-pass --become 
 
 2. Склонируйте этот репозиторий:
 
-```bash
+``` bash
 git clone https://github.com/ITactics/cloud.git
+```
 
 ## Собираем Docker-образ:
 
-```bash
+``` bash
 docker build -t simple-web-app .
+```
 
 ## Запускаем Docker-контейнер:
 
-```bash
+``` bash
 docker run -d -p 8000:8000 --name my-web-app simple-web-app
+```
 
 ## Откройте веб-браузер и перейдите по адресу `http://localhost:8000`, чтобы увидеть приветственное сообщение.
 

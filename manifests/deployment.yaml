@@ -15,6 +15,7 @@ spec:
       containers:
         - name: simple-web-app
           image: simple-web-app:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000
           env:

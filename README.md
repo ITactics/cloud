@@ -92,7 +92,7 @@ docker run -d -p 8000:8000 --name my-web-app simple-web-app
 Для запуска этого приложения потребуется следующее:
 
 * Docker
-* Python 3.11.0
+* Python 3.9
 * Flask
 
 # Задание: Kubernetes манифест и Helm чарт

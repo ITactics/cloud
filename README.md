@@ -125,3 +125,8 @@ docker run -d -p 8000:8000 --name my-web-app simple-web-app
 
    ``` sh
    kubectl apply -f /manifests
+
+
+## Лицензия
+
+Этот проект лицензирован в соответствии с [лицензией GPL-3.0](LICENSE).
